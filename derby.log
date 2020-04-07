@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Apr 03 20:18:54 IST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-8bfb-7114-0000063e9ce0 
+on database directory /home/nitesh/NetBeansProjects/Library/Database with class loader sun.misc.Launcher$AppClassLoader@3d4eac69 
+Loaded from file:/home/nitesh/NetBeansProjects/Library/dist/run1352383121/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_162-b12
+user.dir=/home/nitesh/NetBeansProjects/Library
+os.name=Linux
+os.arch=amd64
+os.version=4.10.0-42-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
