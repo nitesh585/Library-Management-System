@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Library.jnlp">
+  <information>
+    <title>Library</title>
+    <vendor>nitesh</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Library.jar" size="132686" download="eager" />
+    <jar href="lib/commons-codec-1.10.jar" size="284184" download="eager" />
+    <jar href="lib/commons-collections4-4.1.jar" size="751238" download="eager" />
+    <jar href="lib/commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib/controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="lib/derby.jar" size="3232158" download="eager" />
+    <jar href="lib/derbyclient.jar" size="587959" download="eager" />
+    <jar href="lib/jfoenix-8.0.1.jar" size="2405715" download="eager" />
+    <jar href="lib/junit-4.12.jar" size="314932" download="eager" />
+    <jar href="lib/log4j-1.2.17.jar" size="489884" download="eager" />
+    <jar href="lib/poi-3.17.jar" size="2701171" download="eager" />
+    <jar href="lib/poi-ooxml-3.17.jar" size="1479023" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Library" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="library.Library"  name="Library" />
+  <update check="always"/>
+</jnlp>
