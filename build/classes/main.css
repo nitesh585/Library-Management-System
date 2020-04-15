@@ -1,0 +1,12 @@
+.button:hover{
+    -fx-text-fill: black;  
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-border-color: black;
+}
+.tree-table-view{
+    -fx-font-size:15px;
+}
+.table-view{
+    -fx-font-size:15px;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewBooks.ViewBooksController">
+   <children>
+      <TableView fx:id="tableview" editable="true" prefHeight="400.0" prefWidth="600.0" stylesheets="@../main.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="IdCol" prefWidth="75.0" text="Book ID" />
+          <TableColumn fx:id="NameCol" prefWidth="75.0" text="Book Name" />
+            <TableColumn fx:id="AuthorCol" prefWidth="75.0" text="Author Name" />
+            <TableColumn fx:id="PublisherCol" prefWidth="75.0" text="Publisher" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleDeleteOption" text="Delete" />
+                  <MenuItem fx:id="updat" mnemonicParsing="false" onAction="#handleUpdateOption" text="Edit" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </children>
+</AnchorPane>

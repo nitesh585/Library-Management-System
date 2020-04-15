@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StudentView.StudentViewController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #ebf5fb;">
+               <children>
+                  <HBox layoutX="30.0" layoutY="9.0" prefHeight="70.0" prefWidth="1300.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+                     <children>
+                        <ImageView fx:id="searchicon" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Pictures/library/search.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField fx:id="search" focusColor="#0040ff" prefHeight="60.0" prefWidth="1183.0" promptText=" " unFocusColor="RED">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children>
+                  </HBox>
+                  <ComboBox fx:id="option" layoutX="1162.0" layoutY="82.0" onAction="#ComboxHandler" prefHeight="26.0" prefWidth="138.0" promptText="Search on" style="-fx-background-color: #ebf5fb;" />
+                  <Label layoutX="1074.0" layoutY="87.0" text="Search By : " />
+               </children>
+            </Pane>
+            <JFXTreeTableView fx:id="tableview" prefHeight="620.0" stylesheets="main.css">
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy></JFXTreeTableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
