@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 import org.controlsfx.control.Notifications;
 
 public class AddDataController implements Initializable {
-
+    
     DatabaseHandler handler;
     @FXML
     private JFXButton backBtn;
@@ -38,8 +38,8 @@ public class AddDataController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        handler = DatabaseHandler.getInstance();
-    }
+       handler = DatabaseHandler.getInstance();
+    }    
 
     //Go back to the previous window
     @FXML
@@ -58,34 +58,34 @@ public class AddDataController implements Initializable {
     //adding data
     @FXML
     private void addData(ActionEvent event) throws SQLException {
-        String BId = bookId.getText();
-        String Bname = bookName.getText();
-        String Aname = authorName.getText();
-        String pub = publisher.getText();
-
-        String query = "INSERT INTO BOOKS VALUES ('"   //Query for inserting records in database
-                       + BId+"','"
-                       + Bname+"','"
-                       + Aname+"','"
-                       + pub+"')";
-
-        //If a any Field is empty
-        if(BId.equals("") || Bname.equals("") || Aname.equals("") || pub.equals("")) {
+         String BId = bookId.getText();
+         String Bname = bookName.getText();
+         String Aname = authorName.getText();
+         String pub = publisher.getText();
+         
+         String query = "INSERT INTO BOOKS VALUES ('"   //Query for inserting records in database
+                 + BId+"','"
+                 + Bname+"','"
+                 + Aname+"','"
+                 + pub+"')";
+         
+         //If a any Field is empty
+        if(BId.equals("") || Bname.equals("") || Aname.equals("") || pub.equals("")){
             Notifications.create().title("ERROR").text("A Field is Empty").position(Pos.TOP_RIGHT).showError();
             return;
         }
-
-        if(handler.execAction(query)) {               //execAction perform above's query
+        
+        if(handler.execAction(query)){                //execAction perform above's query 
             // If Query is succefully performed
             Notifications.create().title("Successful").text("Data Entered").position(Pos.TOP_RIGHT).graphic(new ImageView("/Images/yes.png")).show();
-        } else {
+        }else{
             // If Query is not Sucessfully performed
             Notifications.create().title("ERROR").text(BId+" Already Exists").position(Pos.TOP_RIGHT).showError();
         }
-
+        
         bookId.setText("");
         bookName.setText("");
         authorName.setText("");
         publisher.setText("");
-    }
+    } 
 }

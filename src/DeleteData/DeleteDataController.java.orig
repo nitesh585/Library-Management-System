@@ -21,7 +21,7 @@ public class DeleteDataController implements Initializable {
     DatabaseHandler handler;
     @FXML
     private JFXButton backBtn;
-
+    
     @FXML
     private JFXButton deleteBtn;
     @FXML
@@ -29,8 +29,8 @@ public class DeleteDataController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        handler = DatabaseHandler.getInstance();
-    }
+             handler = DatabaseHandler.getInstance();
+    }    
 
     @FXML
     private void goBack(ActionEvent event) {
@@ -44,13 +44,13 @@ public class DeleteDataController implements Initializable {
             Logger.getLogger(DeleteDataController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     @FXML
     private void deleteData(ActionEvent event) throws SQLException {
         String BId = bookId.getText();
         String query = "DELETE FROM BOOKS WHERE BookId = '"+BId+"'";
         handler.deleteRow(query);
-
+        
         bookId.setText("");
     }
 }

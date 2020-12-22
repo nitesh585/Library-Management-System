@@ -15,20 +15,20 @@ public final class DatabaseHandler {
     private static final String db_url = "jdbc:derby:Database;create = true";
     private static Connection conn = null;
     private static Statement smt = null;
-
-    private DatabaseHandler() {
+   
+   private DatabaseHandler(){
         createDatabase();
         createTable();
     }
-
-    public static DatabaseHandler getInstance() {
-        if(dbHandler==null) {
-            dbHandler = new DatabaseHandler();
-        }
-        return dbHandler;
-    }
-
-    public void createDatabase() {
+   
+   public static DatabaseHandler getInstance(){
+       if(dbHandler==null){
+           dbHandler = new DatabaseHandler();
+       }
+       return dbHandler;
+   }
+    
+    public void createDatabase(){
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
             conn  =  DriverManager.getConnection(db_url);
@@ -40,22 +40,22 @@ public final class DatabaseHandler {
             Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public void createTable() {
+    
+    public void createTable(){
         try {
             String Table_name = "Books";
             smt = conn.createStatement();
             DatabaseMetaData metadata = conn.getMetaData();
             ResultSet Tables = metadata.getTables(null,null, Table_name.toUpperCase(), null);
-            if(Tables.next()) {
+            if(Tables.next()){        
                 System.out.println("Table exits");
-            } else {
-                String query = "CREATE TABLE "+Table_name.toUpperCase() + " "
-                               + "(BookId varchar(30) primary key,"
-                               + "BookName varchar(200),"
-                               + "AuthorName varchar(200),"
-                               + "PublisherName varchar(200))";
-                smt.execute(query);
+            }else{
+                     String query = "CREATE TABLE "+Table_name.toUpperCase() + " "
+                    + "(BookId varchar(30) primary key,"
+                    + "BookName varchar(200),"
+                    + "AuthorName varchar(200),"
+                    + "PublisherName varchar(200))";
+                 smt.execute(query);    
             }
         } catch (SQLException ex) {
             Alert a = new Alert(Alert.AlertType.ERROR);
@@ -65,8 +65,8 @@ public final class DatabaseHandler {
             Logger.getLogger(DatabaseHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public ResultSet execQuery(String q) {
+    
+    public ResultSet execQuery(String q){
         ResultSet  res = null;
         try {
             smt =  conn.createStatement();
@@ -76,8 +76,8 @@ public final class DatabaseHandler {
         }
         return res;
     }
-
-    public Boolean execAction(String q) {
+    
+    public Boolean execAction(String q){
         try {
             smt = conn.createStatement();
             smt.execute(q);
@@ -87,8 +87,8 @@ public final class DatabaseHandler {
             return false;
         }
     }
-
-    public Boolean deleteRow(String q) {
+  
+    public Boolean deleteRow(String q){
         try {
             smt = conn.createStatement();
             smt.executeUpdate(q);
@@ -98,5 +98,5 @@ public final class DatabaseHandler {
             return false;
         }
     }
-
+    
 }

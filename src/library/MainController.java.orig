@@ -17,7 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainController implements Initializable {
-
+    
     @FXML
     private ImageView admin;
     @FXML
@@ -26,15 +26,15 @@ public class MainController implements Initializable {
     private JFXButton adminBtn;
     @FXML
     private JFXButton studentBtn;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        Image s = new Image("/Images/student.png");  //setting student image
-        Image a = new Image("/Images/administrator.png");  //setting admininstrator image
-        admin.setImage(a);
-        student.setImage(s);
-    }
+       
+       Image s = new Image("/Images/student.png");  //setting student image
+       Image a = new Image("/Images/administrator.png");  //setting admininstrator image
+       admin.setImage(a);
+       student.setImage(s);
+    }    
 
     @FXML
     private void loadAdministrator(ActionEvent event) {
@@ -45,23 +45,23 @@ public class MainController implements Initializable {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        } catch (IOException ex) {
+           } catch (IOException ex) {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
     private void loadStudent(ActionEvent event) {
-        try {
+       try {
             //loading student scene
             Stage stage=(Stage) studentBtn.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/StudentView/studentView.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        } catch (IOException ex) {
+           } catch (IOException ex) {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
 }
