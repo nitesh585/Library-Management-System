@@ -25,37 +25,37 @@ public class UpdateDataController implements Initializable {
     private JFXButton updateBtn;
 
     ViewBooksController v;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    }
-
+        
+    }    
+    
     @FXML
-    public void inflateUI(ViewBooksController.Books book) {
+    public void inflateUI(ViewBooksController.Books book){
         bookId.setText(book.getId());
         bookName.setText(book.getName());
         authorName.setText(book.getAuthName());
         publisher.setText(book.getPubName());
         bookId.setEditable(false);
     }
-
+    
     @FXML
-    private void update_Data(ActionEvent event) {
-        String i = bookId.getText();
-        String n = bookName.getText();
-        String a = authorName.getText();
-        String p = publisher.getText();
-        String q = "UPDATE BOOKS SET BookId = '" + i+"'"
-                   + ",BookName = '"+n+"'"
-                   + ",AuthorName = '"+a+"'"
-                   + ",PublisherName = '"+p+"'"
-                   + "WHERE BookId='"+i+"'";
-        DatabaseHandler handler = DatabaseHandler.getInstance();
-        handler.execAction(q);
-        bookId.setText("");
-        bookName.setText("");
-        authorName.setText("");
-        publisher.setText("");
+    private void update_Data(ActionEvent event){
+      String i = bookId.getText();
+      String n = bookName.getText();
+      String a = authorName.getText();
+      String p = publisher.getText();
+      String q = "UPDATE BOOKS SET BookId = '" + i+"'"
+              + ",BookName = '"+n+"'"
+              + ",AuthorName = '"+a+"'"
+              + ",PublisherName = '"+p+"'"
+              + "WHERE BookId='"+i+"'";
+      DatabaseHandler handler = DatabaseHandler.getInstance();
+      handler.execAction(q);
+      bookId.setText("");
+      bookName.setText("");
+      authorName.setText("");
+      publisher.setText("");
     }
 }
